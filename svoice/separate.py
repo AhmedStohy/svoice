@@ -10,6 +10,7 @@ import argparse
 import logging
 import os
 import sys
+import soundfile as sf
 
 import librosa
 import torch
@@ -55,7 +56,9 @@ def save_wavs(estimate_source, mix_sig, lengths, filenames, out_dir, sr=16000):
 
 
 def write(inputs, filename, sr=8000):
-    librosa.output.write_wav(filename, inputs, sr, norm=True)
+    #librosa.output.write_wav(filename, inputs, sr, norm=True)
+    sf.write(filename, inputs, sr, 'PCM_24')
+
 
 
 def get_mix_paths(args):
