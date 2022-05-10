@@ -55,6 +55,8 @@ class Trainset:
 
         # verify all sets has the same size
         for s in self.sets:
+            print('len s',len(s))
+            print('len mix set',len(self.mix_set))
             assert len(s) == len(self.mix_set)
 
     def __getitem__(self, index):
